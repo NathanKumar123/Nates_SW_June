@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Importing Proc
+This is where I import data 
+```{r}
+library(tidyverse)
+library(haven)
+airline <- read_sas("http://www.principlesofeconometrics.com/sas/airline.sas7bdat", 
+    NULL)
+airline
+```
+Data Wrangle 
+Here is where I clean the data 
+
+```{r}
+ggplot(airline) +
+ aes(x = L, fill = Y, size = R) +
+ geom_histogram(bins = 30L) +
+ scale_fill_gradient() +
+ theme_minimal()
+```
+
