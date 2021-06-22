@@ -6,6 +6,10 @@ output: html_notebook
 Importing Proc
 This is where I import data 
 ```{r}
+
+
+
+
 library(tidyverse)
 library(haven)
 airline <- read_sas("http://www.principlesofeconometrics.com/sas/airline.sas7bdat", 
@@ -20,6 +24,12 @@ ggplot(airline) +
  aes(x = L, fill = Y, size = R) +
  geom_histogram(bins = 30L) +
  scale_fill_gradient() +
+ theme_minimal()
+```
+```{r}
+ggplot(airline) +
+ aes(x = Y) +
+ geom_histogram(bins = 30L, fill = "#0c4c8a") +
  theme_minimal()
 ```
 
